@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kunal Car Game</title>
+
+<style>
+body{
+background:black;
+color:white;
+text-align:center;
+font-family:Arial;
+}
+
+#gameArea{
+width:300px;
+height:500px;
+background:gray;
+margin:auto;
+position:relative;
+overflow:hidden;
+}
+
+#car{
+width:40px;
+height:70px;
+background:red;
+position:absolute;
+bottom:20px;
+left:130px;
+}
+
+.line{
+width:10px;
+height:60px;
+background:white;
+position:absolute;
+left:145px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Kunal Car Game</h1>
+<p>Use LEFT and RIGHT arrow keys to move the car</p>
+
+<div id="gameArea">
+<div id="car"></div>
+</div>
+
+<script>
+
+let car = document.getElementById("car")
+let gameArea = document.getElementById("gameArea")
+
+document.addEventListener("keydown", moveCar)
+
+function moveCar(e){
+
+let left = car.offsetLeft
+
+if(e.key === "ArrowLeft" && left > 0){
+car.style.left = left - 20 + "px"
+}
+
+if(e.key === "ArrowRight" && left < 260){
+car.style.left = left + 20 + "px"
+}
+
+}
+
+</script>
+
+</body>
+</html>
